@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({
 })); // support encoded bodies
 
 
-// app.get('/', function(req, res) {
-//   res.sendFile('index.html');
-// });
+app.get('/', function(req, res) {
+  res.sendFile('index.html');
+});
 
 
 
