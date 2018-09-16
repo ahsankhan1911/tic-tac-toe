@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.get('/*', function(req, res) {
-  res.sendFile('index.html');
+    res.sendFile(path.join(__dirname, './client/build', 'index1.html'));
 });
 
 
