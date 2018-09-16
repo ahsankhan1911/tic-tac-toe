@@ -4,7 +4,8 @@
   "description": "A mobile web based tic-tac-toe game made with Javascript MERN stack",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +17,16 @@
   ],
   "author": "Ahsan Khan",
   "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  },
   "bugs": {
     "url": "https://github.com/ahsankhan1911/tic-tac-toe/issues"
   },
-  "homepage": "https://github.com/ahsankhan1911/tic-tac-toe#readme"
+  "homepage": "https://github.com/ahsankhan1911/tic-tac-toe#readme",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  }
 }
