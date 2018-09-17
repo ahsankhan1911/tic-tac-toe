@@ -25,3 +25,39 @@ body {
 .startGameBtn {
   text-align: center;
 }
+
+.startGameBtn {
+  background: #3498db;
+  width: 40%;
+  /* padding: 4px 0; */
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  border-radius: 3px;
+}
+.startGameBtn p {
+  font-family: 'sans-serif';
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.startGameBtn:hover {
+  cursor: pointer;
+}
+.startGameBtn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  border-radius: 50%;
+  background-color: #927608;
+  opacity: 0.4;
+  bottom: -30px;
+}
