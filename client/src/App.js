@@ -1,76 +1,98 @@
-import React, { Component , Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import Utils from './utils'
 
 class App extends Component {
 
   state = {
-    playerone : "Player One",
-    playertwo : 'Player Two'
+    playerone: "Player One",
+    playertwo: 'Player Two'
 
 
   }
 
-  componentDidMount () {
-    
+  componentDidMount() {
+
   }
 
   handleStartGame = () => {
-    var $button = document.querySelector('.button');
- 
-    var duration = 0.3,
-    delay = 0.08;
-// TweenMax.to($button, duration, {scaleY: 1.6, ease: Expo.easeOut});
-// TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
-// TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
 
 
+    console.log("hello world")
     this.setState({
-      playerone : prompt("Enter Player one name:", this.state.playerone)
-    }, () => {
-      console.log(this.state.playerone)
+      playerone: prompt("Enter Player one name:", this.state.playerone)
     })
 
     this.setState({
-      playertwo : prompt("Enter Player two name:", this.state.playertwo)
-    }, () => {
-      console.log(this.state.playertwo)
+      playertwo: prompt("Enter Player two name:", this.state.playertwo)
     })
 
-  //   if (this.state.playerone === null || this.state.playerone === "") {
-  //     txt = "User cancelled the prompt.";
-  // } else {
-  //     txt = "Hello " + this.state.playerone + "! How are you today?";
-
-      
-  // }
   }
+
+  handleImgClick  (index)  {
+    console.log(index)
+
+    var img = document.createElement("img");
+    img.width = 100
+    img.src = "/images/tic-tac-toe-O.png"
+  
+    document.getElementsByClassName('ImgContainer')[index].appendChild(img)
+    
+  }
+
+
+  
   render() {
     return (
       <Fragment>
-      <div className="App">
-
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-
-   <img src="/images/tic-tac-toe-X.png" alt="ttt-bg" width="25%"></img>
-
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
-   <img src="/images/tic-tac-toe-O.png" alt="ttt-bg" width="25%"></img>
+        <div className="App">
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={  () => { this.handleImgClick(0)}}></p>
 
 
-      </div>
-      <div className="startGameBtn">
-      <p onClick={this.handleStartGame}> Start Game </p>
-      </div>
-    
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(1)}} >
+           
+
+          </p>
+
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(2)}} >
+           
+
+          </p>
+
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(3)}} >
+           
+
+          </p>
+
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(4)}} >
+           
+
+          </p>
+
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(5)}} >
+           
+
+          </p>
+
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(6)}} >
+           
+
+          </p>
+
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(7)}} >
+           
+
+          </p>
+          <p className="ImgContainer" style={{  width:"30%", height: "60px" }} onClick={() => { this.handleImgClick(8)}} >
+           
+
+          </p>
+
+
+        </div>
+        <p className="startGameBtn">
+          <p onClick={this.handleStartGame}> Start Game </p>
+        </p>
+
       </Fragment>
     );
   }

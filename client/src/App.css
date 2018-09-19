@@ -9,7 +9,7 @@ body {
   margin-top: 30%;
   background-image: url('/images/ttt_board.png');
   width: 100%;
-  height: 314px;
+  height: 360px;
   text-align: center;
   margin-top: 30%;
   background-position: center;
@@ -17,9 +17,7 @@ body {
   background-size: cover;
 }
 
-.App img {
-  padding: 12px 10px 10px 10px;
-}
+
 
 
 .startGameBtn {
@@ -60,4 +58,15 @@ body {
   background-color: #927608;
   opacity: 0.4;
   bottom: -30px;
+}
+
+
+.ImgContainer {
+  display: inline-block;
+  /* background-color: red; */
+}
+
+.ImgContainer img {
+  padding: 0px 0px 0px 0px;
+  /* visibility: hidden; */
 }
