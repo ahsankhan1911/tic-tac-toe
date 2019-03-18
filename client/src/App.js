@@ -22,10 +22,26 @@ class App extends Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
      mainButton: <p onClick={this.handleStartGame}> Start Game </p>
     })
+
+      window.moveTo(0, 0);
+
+      if (document.all) {
+        console.log("came here")
+          window.top.window.resizeTo(window.screen.availWidth, window.screen.availHeight);
+      }
+
+      else if (document.layers || document.getElementById) {
+        console.log("came here")
+          if (window.top.window.outerHeight < window.screen.availHeight || window.top.window.outerWidth < window.screen.availWidth) {
+              window.top.window.outerHeight = window.screen.availHeight;
+              window.top.window.outerWidth = window.screen.availWidth;
+          }
+      }
+
   }
 
   handleStartGame = () => {
@@ -45,8 +61,6 @@ class App extends Component {
 
   handleImgClick(index) {
     
-
-
 
    
     if (this.state.gameActive) {
@@ -126,21 +140,52 @@ class App extends Component {
         })
       }
     }
+    console.log("patterns",winningPatterns)
+    console.log("pl 1 patterns",plarerOnePattern)
+    console.log("pl 2 patterns",plarerTwoPattern)
 
-    else {
-      return null;
-    }
+
+// var checkifPlOneWin = winningPatterns.find((val) => { return val == plarerOnePattern})
+
+// console.log("pl 1 check ",checkifPlOneWin)
+
+// var checkIfPlTwoWin = winningPatterns.find((val) => JSON.stringify( val) == JSON.stringify(plarerTwoPattern))
+
+// console.log( " pl 2 check ", checkIfPlTwoWin)
 
   }
 
   handlePlayAgain =  () => {
-    // var imageContainer = document.getElementsByClassName('ImgContainer')
-   document.getElementsByClassName('ImgContainer')[0].removeChild()
+    var imageContainer = document.getElementsByClassName('ImgContainer')
+    for (var i = 0; i < imageContainer.length; i++) {
+        for(var j = 0; j < imageContainer[i].children.length; j++) {
+          imageContainer[i].removeChild(imageContainer[i].childNodes[j])
+        }
+    }
+    
+  //  document.getElementsByClassName('ImgContainer')
+    plarerOnePattern = []
+    plarerTwoPattern = []
+  this.setState({
+    mainButton: '',
+    playerone: prompt("Enter Player one name:", this.state.playerone),
+    playertwo: prompt("Enter Player two name:", this.state.playertwo)
+  },  () => {
+
+    this.setState({
+      gameActive: true,
+      playerMessage: `${this.state.playerone}'s turn`,
+      mainButton : ''
+    })
+  })
+
+
   }
 
 
 
   render() {
+    console.log("HELLOOOOOO ")
     return (
       <Fragment>
         <h2 style={{textAlign: "center"}}>{this.state.playerMessage}</h2>
