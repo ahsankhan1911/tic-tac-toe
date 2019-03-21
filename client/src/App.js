@@ -95,7 +95,7 @@ class App extends Component {
 
           if (imageContainer[index].children.length < 1) {
             var img = document.createElement("img");
-            img.width = 100
+            img.width = 70
             if (counter % 2 === 0) {
               img.src = "/images/tic-tac-toe-O.png"
               this.setState({
@@ -185,10 +185,9 @@ class App extends Component {
 
 
   render() {
-    console.log("HELLOOOOOO ")
     return (
       <Fragment>
-        <h2 style={{textAlign: "center"}}>{this.state.playerMessage}</h2>
+        <h2 style={{textAlign: "center", color: "red"}}>{this.state.playerMessage}</h2>
         <div className="App">
 
           <p className="ImgContainer" style={{ width: "30%", height: "60px" }} onClick={() => { this.handleImgClick(0) }}></p>

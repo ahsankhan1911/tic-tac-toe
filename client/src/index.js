@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {isMobile} from 'react-device-detect';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const NotSupported = () => ( <div>Game is available only for Mobile devices</div>)
+
+ReactDOM.render(isMobile? <App /> : <NotSupported/>, document.getElementById('root'));
 registerServiceWorker();
